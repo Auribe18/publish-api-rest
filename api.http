@@ -1,0 +1,40 @@
+###Recuperar todas las peliculas
+GET http://localhost:3000/movies
+
+###Recuperar una pelicula por id
+GET http://localhost:3000/movies/b6e03689-cccd-478e-8565-d92f40813b13
+
+###Recuperar peliculas por genero
+GET http://localhost:3000/movies?genre=drama
+
+###Crear una nueva pelicula
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": 123123,
+    "year": 198,
+    "director": "Pepito el Director",
+    "duration": 200,
+    "poster": "https://vice-press.com/cdn/shop/files/jurassic-park-poster-paul-mann.jpg?v=1710759235&width=1024",
+    "genre": [
+        "Adventure", 
+        "Sci-Fi",
+        "Action",
+        "Thriller",
+        "Drama"
+        ],
+    "rate": 8.1
+}
+
+###Actualizar una pelicula por id
+PATCH http://localhost:3000/movies/b6e03689-cccd-478e-8565-d92f40813b13
+Content-Type: application/json
+
+{
+    "title": "Jurassic Park",
+    "year": 1997,
+    "director": "Steven Spielberg",
+    "poster": "https://vice-press.com/cdn/shop/files/jurassic-park-poster-paul-mann.jpg?v=1710759235&width=1024",
+    "rate": 10
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probar API REST</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        article {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+        }
+        article img {
+            width: 190px;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+    <script type = "module">
+        fetch('http://localhost:3000/movies')
+            .then(res => res.json())
+            .then(movies => {
+                const html = movies.map(movie=>{
+                    return `<article data-id="${movie.id}">
+                            <h2>${movie.title}</h2>
+                            <img src="${movie.poster}" alt="${movie.title}">
+                            <p>${movie.director}</p>
+                            </article>`
+                }).join('')
+                document.querySelector('main').innerHTML = html
+            })
+    </script>
+</head>
+<body>
+    <main>
+
+    </main>
+
+</body>
+</html>

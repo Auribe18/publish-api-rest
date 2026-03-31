@@ -29,9 +29,8 @@ app.listen(port, () => {
 app.get('/movies', (req, res) => {
     const origin = req.headers.origin
     console.log('Origin:', origin)
-    if (acceptedOrigins.includes(origin) || !origin) {
-        res.header('Access-Control-Allow-Origin', origin)
-    }
+    res.header('Access-Control-Allow-Origin', origin)
+
 
     const { genre } = req.query
     if (genre) {

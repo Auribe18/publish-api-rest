@@ -2,7 +2,7 @@
   "name": "publish-api-rest",
   "version": "1.0.0",
   "description": "Publicar APIs REST en Vercel",
-  "main": "index.js",
+  "main": "./WEB/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --watch app.mjs"
